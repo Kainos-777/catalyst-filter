@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T15:59:42.227413",
+  "generated_at": "2026-06-20T16:09:19.775274",
   "data": {
     "kospi": {
       "price": "9052.42",
@@ -13,118 +13,451 @@
     },
     "all_stocks": [
       {
-        "code": "000660",
-        "name": "SK하이닉스",
-        "sector": "반도체",
-        "error": "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=000660",
-        "signal": "오류",
-        "pass_count": 0,
-        "reasons": [
-          "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=000660"
-        ]
-      },
-      {
-        "code": "005930",
-        "name": "삼성전자",
-        "sector": "반도체",
-        "error": "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=005930",
-        "signal": "오류",
-        "pass_count": 0,
-        "reasons": [
-          "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=005930"
-        ]
-      },
-      {
-        "code": "009150",
-        "name": "삼성전기",
-        "sector": "전기전자",
-        "error": "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=009150",
-        "signal": "오류",
-        "pass_count": 0,
-        "reasons": [
-          "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=009150"
-        ]
-      },
-      {
-        "code": "012450",
-        "name": "한화에어로스페이스",
-        "sector": "방산",
-        "error": "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=012450",
-        "signal": "오류",
-        "pass_count": 0,
-        "reasons": [
-          "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=012450"
-        ]
-      },
-      {
-        "code": "402340",
-        "name": "SK스퀘어",
-        "sector": "지주",
-        "error": "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=402340",
-        "signal": "오류",
-        "pass_count": 0,
-        "reasons": [
-          "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=402340"
-        ]
-      },
-      {
         "code": "005380",
         "name": "현대차",
         "sector": "자동차",
-        "error": "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=005380",
-        "signal": "오류",
-        "pass_count": 0,
+        "price": "613000",
+        "change": "12000",
+        "change_rate": "2.00",
+        "volume": "1831967",
+        "high_52w": "783000",
+        "low_52w": "200500",
+        "foreign_net": "197666",
+        "inst_net": "-141398",
+        "rsi": 30.9,
+        "pass_count": 5,
+        "signal": "매수",
         "reasons": [
-          "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=005380"
-        ]
-      },
-      {
-        "code": "196170",
-        "name": "알테오젠",
-        "sector": "바이오",
-        "error": "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=196170",
-        "signal": "오류",
-        "pass_count": 0,
-        "reasons": [
-          "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=196170"
+          "수급 양호 (외인 +197,666주, 기관 -141,398주)",
+          "RSI 30.9 — 매수 적정 구간",
+          "52주 위치 71%",
+          "등락률 +2.00% — 안정적 변동성"
         ]
       },
       {
         "code": "373220",
         "name": "LG에너지솔루션",
         "sector": "2차전지",
-        "error": "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=373220",
-        "signal": "오류",
-        "pass_count": 0,
+        "price": "404500",
+        "change": "4500",
+        "change_rate": "1.12",
+        "volume": "753314",
+        "high_52w": "527000",
+        "low_52w": "287000",
+        "foreign_net": "149559",
+        "inst_net": "-73868",
+        "rsi": 33.4,
+        "pass_count": 5,
+        "signal": "매수",
         "reasons": [
-          "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=373220"
+          "수급 양호 (외인 +149,559주, 기관 -73,868주)",
+          "RSI 33.4 — 매수 적정 구간",
+          "52주 위치 49%",
+          "등락률 +1.12% — 안정적 변동성"
         ]
       },
       {
         "code": "267260",
         "name": "HD현대일렉트릭",
         "sector": "전력기기",
-        "error": "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=267260",
-        "signal": "오류",
-        "pass_count": 0,
+        "price": "1078000",
+        "change": "-9000",
+        "change_rate": "-0.83",
+        "volume": "210942",
+        "high_52w": "1430000",
+        "low_52w": "418000",
+        "foreign_net": "27915",
+        "inst_net": "-16223",
+        "rsi": 52.0,
+        "pass_count": 5,
+        "signal": "매수",
         "reasons": [
-          "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=267260"
+          "수급 양호 (외인 +27,915주, 기관 -16,223주)",
+          "RSI 52.0 — 매수 적정 구간",
+          "52주 위치 65%",
+          "등락률 -0.83% — 안정적 변동성"
         ]
       },
       {
         "code": "034020",
         "name": "두산에너빌리티",
         "sector": "원전",
-        "error": "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=034020",
-        "signal": "오류",
-        "pass_count": 0,
+        "price": "97900",
+        "change": "-1700",
+        "change_rate": "-1.71",
+        "volume": "4391283",
+        "high_52w": "139200",
+        "low_52w": "51100",
+        "foreign_net": "75074",
+        "inst_net": "-84469",
+        "rsi": 42.7,
+        "pass_count": 5,
+        "signal": "매수",
         "reasons": [
-          "500 Server Error: Internal Server Error for url: https://openapi.koreainvestment.com:9443/uapi/domestic-stock/v1/quotations/inquire-price?FID_COND_MRKT_DIV_CODE=J&FID_INPUT_ISCD=034020"
+          "수급 양호 (외인 +75,074주, 기관 -84,469주)",
+          "RSI 42.7 — 매수 적정 구간",
+          "52주 위치 53%",
+          "등락률 -1.71% — 안정적 변동성"
+        ]
+      },
+      {
+        "code": "009150",
+        "name": "삼성전기",
+        "sector": "전기전자",
+        "price": "2270000",
+        "change": "70000",
+        "change_rate": "3.18",
+        "volume": "1728303",
+        "high_52w": "2417000",
+        "low_52w": "129200",
+        "foreign_net": "117254",
+        "inst_net": "18623",
+        "rsi": 54.2,
+        "pass_count": 4,
+        "signal": "매수",
+        "reasons": [
+          "수급 양호 (외인 +117,254주, 기관 +18,623주)",
+          "RSI 54.2 — 매수 적정 구간",
+          "52주 위치 94%",
+          "등락률 +3.18% — 안정적 변동성"
+        ]
+      },
+      {
+        "code": "012450",
+        "name": "한화에어로스페이스",
+        "sector": "방산",
+        "price": "1122000",
+        "change": "-67000",
+        "change_rate": "-5.63",
+        "volume": "456658",
+        "high_52w": "1655000",
+        "low_52w": "760000",
+        "foreign_net": "7718",
+        "inst_net": "-10892",
+        "rsi": 45.1,
+        "pass_count": 4,
+        "signal": "매수",
+        "reasons": [
+          "수급 양호 (외인 +7,718주, 기관 -10,892주)",
+          "RSI 45.1 — 매수 적정 구간",
+          "52주 위치 40%",
+          "등락률 -5.63% — 변동성 확대"
+        ]
+      },
+      {
+        "code": "196170",
+        "name": "알테오젠",
+        "sector": "바이오",
+        "price": "353500",
+        "change": "-16000",
+        "change_rate": "-4.33",
+        "volume": "578223",
+        "high_52w": "569000",
+        "low_52w": "286000",
+        "foreign_net": "21732",
+        "inst_net": "-68446",
+        "rsi": 46.6,
+        "pass_count": 4,
+        "signal": "매수",
+        "reasons": [
+          "수급 양호 (외인 +21,732주, 기관 -68,446주)",
+          "RSI 46.6 — 매수 적정 구간",
+          "52주 위치 24%",
+          "등락률 -4.33% — 변동성 확대"
+        ]
+      },
+      {
+        "code": "000660",
+        "name": "SK하이닉스",
+        "sector": "반도체",
+        "price": "2764000",
+        "change": "79000",
+        "change_rate": "2.94",
+        "volume": "7478195",
+        "high_52w": "2891000",
+        "low_52w": "242000",
+        "foreign_net": "-317848",
+        "inst_net": "259188",
+        "rsi": 62.9,
+        "pass_count": 3,
+        "signal": "관망",
+        "reasons": [
+          "수급 양호 (외인 -317,848주, 기관 +259,188주)",
+          "RSI 62.9 — 과매수 (조정 주의)",
+          "52주 위치 95%",
+          "등락률 +2.94% — 안정적 변동성"
+        ]
+      },
+      {
+        "code": "402340",
+        "name": "SK스퀘어",
+        "sector": "지주",
+        "price": "1780000",
+        "change": "80000",
+        "change_rate": "4.71",
+        "volume": "1516850",
+        "high_52w": "1891000",
+        "low_52w": "130900",
+        "foreign_net": "-282497",
+        "inst_net": "118715",
+        "rsi": 72.7,
+        "pass_count": 3,
+        "signal": "매도",
+        "reasons": [
+          "수급 양호 (외인 -282,497주, 기관 +118,715주)",
+          "RSI 72.7 — 과매수 (조정 주의)",
+          "52주 위치 94%",
+          "등락률 +4.71% — 안정적 변동성"
+        ]
+      },
+      {
+        "code": "005930",
+        "name": "삼성전자",
+        "sector": "반도체",
+        "price": "354000",
+        "change": "-8500",
+        "change_rate": "-2.34",
+        "volume": "43284898",
+        "high_52w": "374500",
+        "low_52w": "57600",
+        "foreign_net": "-2468914",
+        "inst_net": "-1380348",
+        "rsi": 58.0,
+        "pass_count": 2,
+        "signal": "관망",
+        "reasons": [
+          "수급 약세 (외인 -2,468,914주, 기관 -1,380,348주)",
+          "RSI 58.0 — 과매수 (조정 주의)",
+          "52주 위치 94%",
+          "등락률 -2.34% — 안정적 변동성"
         ]
       }
     ],
-    "buy_list": [],
-    "hold_list": [],
-    "sell_list": []
+    "buy_list": [
+      {
+        "code": "005380",
+        "name": "현대차",
+        "sector": "자동차",
+        "price": "613000",
+        "change": "12000",
+        "change_rate": "2.00",
+        "volume": "1831967",
+        "high_52w": "783000",
+        "low_52w": "200500",
+        "foreign_net": "197666",
+        "inst_net": "-141398",
+        "rsi": 30.9,
+        "pass_count": 5,
+        "signal": "매수",
+        "reasons": [
+          "수급 양호 (외인 +197,666주, 기관 -141,398주)",
+          "RSI 30.9 — 매수 적정 구간",
+          "52주 위치 71%",
+          "등락률 +2.00% — 안정적 변동성"
+        ]
+      },
+      {
+        "code": "373220",
+        "name": "LG에너지솔루션",
+        "sector": "2차전지",
+        "price": "404500",
+        "change": "4500",
+        "change_rate": "1.12",
+        "volume": "753314",
+        "high_52w": "527000",
+        "low_52w": "287000",
+        "foreign_net": "149559",
+        "inst_net": "-73868",
+        "rsi": 33.4,
+        "pass_count": 5,
+        "signal": "매수",
+        "reasons": [
+          "수급 양호 (외인 +149,559주, 기관 -73,868주)",
+          "RSI 33.4 — 매수 적정 구간",
+          "52주 위치 49%",
+          "등락률 +1.12% — 안정적 변동성"
+        ]
+      },
+      {
+        "code": "267260",
+        "name": "HD현대일렉트릭",
+        "sector": "전력기기",
+        "price": "1078000",
+        "change": "-9000",
+        "change_rate": "-0.83",
+        "volume": "210942",
+        "high_52w": "1430000",
+        "low_52w": "418000",
+        "foreign_net": "27915",
+        "inst_net": "-16223",
+        "rsi": 52.0,
+        "pass_count": 5,
+        "signal": "매수",
+        "reasons": [
+          "수급 양호 (외인 +27,915주, 기관 -16,223주)",
+          "RSI 52.0 — 매수 적정 구간",
+          "52주 위치 65%",
+          "등락률 -0.83% — 안정적 변동성"
+        ]
+      },
+      {
+        "code": "034020",
+        "name": "두산에너빌리티",
+        "sector": "원전",
+        "price": "97900",
+        "change": "-1700",
+        "change_rate": "-1.71",
+        "volume": "4391283",
+        "high_52w": "139200",
+        "low_52w": "51100",
+        "foreign_net": "75074",
+        "inst_net": "-84469",
+        "rsi": 42.7,
+        "pass_count": 5,
+        "signal": "매수",
+        "reasons": [
+          "수급 양호 (외인 +75,074주, 기관 -84,469주)",
+          "RSI 42.7 — 매수 적정 구간",
+          "52주 위치 53%",
+          "등락률 -1.71% — 안정적 변동성"
+        ]
+      },
+      {
+        "code": "009150",
+        "name": "삼성전기",
+        "sector": "전기전자",
+        "price": "2270000",
+        "change": "70000",
+        "change_rate": "3.18",
+        "volume": "1728303",
+        "high_52w": "2417000",
+        "low_52w": "129200",
+        "foreign_net": "117254",
+        "inst_net": "18623",
+        "rsi": 54.2,
+        "pass_count": 4,
+        "signal": "매수",
+        "reasons": [
+          "수급 양호 (외인 +117,254주, 기관 +18,623주)",
+          "RSI 54.2 — 매수 적정 구간",
+          "52주 위치 94%",
+          "등락률 +3.18% — 안정적 변동성"
+        ]
+      },
+      {
+        "code": "012450",
+        "name": "한화에어로스페이스",
+        "sector": "방산",
+        "price": "1122000",
+        "change": "-67000",
+        "change_rate": "-5.63",
+        "volume": "456658",
+        "high_52w": "1655000",
+        "low_52w": "760000",
+        "foreign_net": "7718",
+        "inst_net": "-10892",
+        "rsi": 45.1,
+        "pass_count": 4,
+        "signal": "매수",
+        "reasons": [
+          "수급 양호 (외인 +7,718주, 기관 -10,892주)",
+          "RSI 45.1 — 매수 적정 구간",
+          "52주 위치 40%",
+          "등락률 -5.63% — 변동성 확대"
+        ]
+      },
+      {
+        "code": "196170",
+        "name": "알테오젠",
+        "sector": "바이오",
+        "price": "353500",
+        "change": "-16000",
+        "change_rate": "-4.33",
+        "volume": "578223",
+        "high_52w": "569000",
+        "low_52w": "286000",
+        "foreign_net": "21732",
+        "inst_net": "-68446",
+        "rsi": 46.6,
+        "pass_count": 4,
+        "signal": "매수",
+        "reasons": [
+          "수급 양호 (외인 +21,732주, 기관 -68,446주)",
+          "RSI 46.6 — 매수 적정 구간",
+          "52주 위치 24%",
+          "등락률 -4.33% — 변동성 확대"
+        ]
+      }
+    ],
+    "hold_list": [
+      {
+        "code": "000660",
+        "name": "SK하이닉스",
+        "sector": "반도체",
+        "price": "2764000",
+        "change": "79000",
+        "change_rate": "2.94",
+        "volume": "7478195",
+        "high_52w": "2891000",
+        "low_52w": "242000",
+        "foreign_net": "-317848",
+        "inst_net": "259188",
+        "rsi": 62.9,
+        "pass_count": 3,
+        "signal": "관망",
+        "reasons": [
+          "수급 양호 (외인 -317,848주, 기관 +259,188주)",
+          "RSI 62.9 — 과매수 (조정 주의)",
+          "52주 위치 95%",
+          "등락률 +2.94% — 안정적 변동성"
+        ]
+      },
+      {
+        "code": "005930",
+        "name": "삼성전자",
+        "sector": "반도체",
+        "price": "354000",
+        "change": "-8500",
+        "change_rate": "-2.34",
+        "volume": "43284898",
+        "high_52w": "374500",
+        "low_52w": "57600",
+        "foreign_net": "-2468914",
+        "inst_net": "-1380348",
+        "rsi": 58.0,
+        "pass_count": 2,
+        "signal": "관망",
+        "reasons": [
+          "수급 약세 (외인 -2,468,914주, 기관 -1,380,348주)",
+          "RSI 58.0 — 과매수 (조정 주의)",
+          "52주 위치 94%",
+          "등락률 -2.34% — 안정적 변동성"
+        ]
+      }
+    ],
+    "sell_list": [
+      {
+        "code": "402340",
+        "name": "SK스퀘어",
+        "sector": "지주",
+        "price": "1780000",
+        "change": "80000",
+        "change_rate": "4.71",
+        "volume": "1516850",
+        "high_52w": "1891000",
+        "low_52w": "130900",
+        "foreign_net": "-282497",
+        "inst_net": "118715",
+        "rsi": 72.7,
+        "pass_count": 3,
+        "signal": "매도",
+        "reasons": [
+          "수급 양호 (외인 -282,497주, 기관 +118,715주)",
+          "RSI 72.7 — 과매수 (조정 주의)",
+          "52주 위치 94%",
+          "등락률 +4.71% — 안정적 변동성"
+        ]
+      }
+    ]
   }
 }
