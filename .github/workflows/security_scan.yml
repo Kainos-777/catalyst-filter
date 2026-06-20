@@ -1,0 +1,23 @@
+name: Dependency Security Scan
+
+on:
+  push:
+    paths:
+      - "requirements.txt"
+  schedule:
+    # 매주 월요일 자동 스캔 (새 CVE 발견 대비)
+    - cron: "0 0 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: pip-audit로 알려진 취약점 스캔
+        run: |
+          pip install pip-audit -q
+          pip-audit -r requirements.txt

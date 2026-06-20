@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CATALYST FILTER™ — 한국 주식 대시보드</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #060606; color: #e5e5e5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    padding: 14px 12px;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  .brand { color: #22c55e; font-size: 9px; letter-spacing: 3px; margin: 0 0 2px; }
+  h1 { font-size: 17px; font-weight: 900; margin: 0 0 2px; color: #fff; }
+  .meta { color: #333; font-size: 10px; margin: 0 0 14px; }
+  .idx-row { display: flex; gap: 7px; margin-bottom: 12px; }
+  .idx-card { flex: 1; background: #141414; border-radius: 10px; padding: 11px 10px; border: 1px solid #1e1e1e; }
+  .idx-label { color: #444; font-size: 9px; margin: 0 0 2px; }
+  .idx-val { color: #fff; font-size: 16px; font-weight: 900; margin: 0 0 2px; }
+  .idx-chg { font-size: 11px; font-weight: 700; margin: 0; }
+  .up { color: #ef4444; } .down { color: #60a5fa; } .flat { color: #888; }
+  .section { background: #141414; border-radius: 10px; padding: 14px; margin-bottom: 10px; }
+  .section-title { font-size: 11px; font-weight: 800; letter-spacing: 1px; margin: 0 0 10px; }
+  .stock-card { background: #0d0d0d; border-radius: 8px; padding: 11px; margin-bottom: 7px; border: 1px solid #2a2a2a; }
+  .stock-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+  .stock-name { color: #fff; font-weight: 700; font-size: 13px; }
+  .stock-sector { color: #444; font-size: 9px; margin-left: 6px; }
+  .stock-price { color: #22c55e; font-size: 14px; font-weight: 900; }
+  .badge { font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: 800; }
+  .badge-buy { background: #22c55e22; color: #22c55e; }
+  .badge-hold { background: #f59e0b22; color: #f59e0b; }
+  .badge-sell { background: #ef444422; color: #ef4444; }
+  .reasons { margin-top: 6px; }
+  .reason { color: #888; font-size: 11px; margin: 2px 0; }
+  .rsi-tag { background: #1a1a1a; border-radius: 3px; padding: 2px 7px; font-size: 9px; display: inline-block; margin-top: 4px; }
+  .footer { color: #2a2a2a; font-size: 10px; text-align: center; margin-top: 16px; }
+  .loading { text-align: center; padding: 60px 0; color: #444; }
+  .error { background: #1c0a0a; border: 1px solid #ef444466; border-radius: 8px; padding: 12px; color: #fca5a5; font-size: 12px; }
+</style>
+</head>
+<body>
+  <div class="wrap" id="app">
+    <div class="loading">📊 데이터 로딩 중...</div>
+  </div>
+
+<script>
+async function load() {
+  const app = document.getElementById('app');
+  try {
+    const res = await fetch('./data.json?t=' + Date.now());
+    if (!res.ok) throw new Error('data.json을 찾을 수 없습니다. 아직 첫 자동 실행 전일 수 있어요.');
+    const json = await res.json();
+    render(json);
+  } catch (e) {
+    app.innerHTML = `
+      <p class="brand">CATALYST FILTER™</p>
+      <h1>한국 주식 대시보드</h1>
+      <div class="error">⚠️ ${e.message}</div>
+    `;
+  }
+}
+
+function fmtNum(v) {
+  const n = parseFloat(v);
+  return isNaN(n) ? (v ?? '-') : n.toLocaleString('ko-KR');
+}
+function fmtChg(v) {
+  const n = parseFloat(v);
+  if (isNaN(n)) return '-';
+  const cls = n > 0 ? 'up' : n < 0 ? 'down' : 'flat';
+  const sign = n > 0 ? '+' : '';
+  return `<span class="${cls}">${sign}${n.toFixed(2)}%</span>`;
+}
+
+function stockCard(s, badgeClass) {
+  const rsi = s.rsi != null ? `RSI ${s.rsi}` : 'RSI -';
+  const reasons = (s.reasons || []).map(r => `<p class="reason">• ${r}</p>`).join('');
+  return `
+    <div class="stock-card">
+      <div class="stock-top">
+        <div>
+          <span class="stock-name">${s.name}</span>
+          <span class="stock-sector">${s.sector || ''}</span>
+          <div><span class="stock-price">${fmtNum(s.price)}원</span> ${fmtChg(s.change_rate)}</div>
+        </div>
+        <span class="badge ${badgeClass}">${s.signal}</span>
+      </div>
+      <span class="rsi-tag">${rsi} · ${s.pass_count ?? 0}/5 통과</span>
+      <div class="reasons">${reasons}</div>
+    </div>
+  `;
+}
+
+function render(json) {
+  const app = document.getElementById('app');
+  const d = json.data || {};
+  const generatedAt = new Date(json.generated_at).toLocaleString('ko-KR');
+
+  const kospi = d.kospi || {};
+  const kosdaq = d.kosdaq || {};
+
+  const buyList = (d.buy_list || []).map(s => stockCard(s, 'badge-buy')).join('');
+  const holdList = (d.hold_list || []).map(s => stockCard(s, 'badge-hold')).join('');
+  const sellList = (d.sell_list || []).map(s => stockCard(s, 'badge-sell')).join('');
+
+  app.innerHTML = `
+    <p class="brand">CATALYST FILTER™ — KIS API 실시간 연동</p>
+    <h1>한국 주식 종합 대시보드</h1>
+    <p class="meta">최종 업데이트: ${generatedAt}</p>
+
+    <div class="idx-row">
+      <div class="idx-card">
+        <p class="idx-label">KOSPI</p>
+        <p class="idx-val">${fmtNum(kospi.price)}</p>
+        <p class="idx-chg">${fmtChg(kospi.change_rate)}</p>
+      </div>
+      <div class="idx-card">
+        <p class="idx-label">KOSDAQ</p>
+        <p class="idx-val">${fmtNum(kosdaq.price)}</p>
+        <p class="idx-chg">${fmtChg(kosdaq.change_rate)}</p>
+      </div>
+    </div>
+
+    ${buyList ? `<div class="section"><p class="section-title" style="color:#22c55e">📈 매수 신호</p>${buyList}</div>` : ''}
+    ${holdList ? `<div class="section"><p class="section-title" style="color:#f59e0b">⏸ 관망</p>${holdList}</div>` : ''}
+    ${sellList ? `<div class="section"><p class="section-title" style="color:#ef4444">📉 매도 신호</p>${sellList}</div>` : ''}
+
+    <p class="footer">투자 참고용 자료입니다. 투자 손실의 책임은 투자자 본인에게 있습니다.<br>매일 장마감 후 자동 업데이트 (KIS Open API 연동)</p>
+  `;
+}
+
+load();
+</script>
+</body>
+</html>

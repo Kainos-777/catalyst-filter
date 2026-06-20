@@ -1,0 +1,54 @@
+name: Telegram Command Listener
+
+on:
+  schedule:
+    # 10분마다 새 명령(/pause, /resume, /status) 확인
+    # (5분 → 10분으로 완화: GitHub Actions 무료 사용량 절약, 응답은 최대 10분 지연)
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telegram-listener
+  cancel-in-progress: true
+
+jobs:
+  listen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 설치
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 의존성 설치
+        run: pip install -r requirements.txt
+
+      - name: 텔레그램 명령 확인 및 처리
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          cd src
+          python telegram_bot_handler.py
+
+      - name: 상태 변경사항 커밋 및 푸시 (충돌 방지 재시도)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/control.json docs/telegram_offset.json
+          if git diff --staged --quiet; then
+            echo "변경사항 없음, 커밋 생략"
+            exit 0
+          fi
+          git commit -m "🤖 텔레그램 명령 처리 $(date +'%Y-%m-%d %H:%M')"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && break
+            echo "푸시 충돌, ${i}번째 재시도 (3초 대기)..."
+            sleep 3
+          done
