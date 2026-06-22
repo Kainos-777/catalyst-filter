@@ -7,7 +7,7 @@ import json
 import requests
 import time
 
-KIS_BASE_URL = "https://openapivts.koreainvestment.com:29443"  # 모의투자 도메인
+KIS_BASE_URL = "https://openapi.koreainvestment.com:9443"  # 실전투자 도메인
 TOKEN_CACHE_FILE = "/tmp/kis_token.json"
 
 
